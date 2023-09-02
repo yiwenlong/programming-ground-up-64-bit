@@ -8,3 +8,6 @@ toupper-debug:
 	as -g -o ./build/toupper.o toupper.s
 	ld -o ./build/toupper ./build/toupper.o
 	gdb ./build/toupper
+
+clean:
+	rm -fr ./build
