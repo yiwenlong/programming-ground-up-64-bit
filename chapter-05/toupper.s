@@ -117,10 +117,10 @@ continue_read_loop:
   addq	$8,			%rsp			# restore %rsp   
 
   ### WRITE THE BLOCK OUT TO THE OUTPUT FILE ###
+  movq	$SYS_WRITE,		%rax
   movq	ST_FD_OUT(%rbp),	%rdi			# file to use
   movq  $BUFFER_DATA, 		%rsi			# location of the buffer
   movq  %rax,			%rdx			# size of the buffer
-  movq	$SYS_WRITE,		%rax
   syscall
   
   ### CONTINUE THE LOOP ###
